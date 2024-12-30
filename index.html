@@ -1,0 +1,53 @@
+<title>Simple Calculator</title>
+
+<h6>I took some help from AI as I could not make the calculator answer come the page would just be blank. If you want me to redo the project you can.</h6>
+
+<!--I COULD NOT MAKE IT WORK AFTER THIS PART BY MY OWN I TRIED BUT I COULD NOT SO I DID THIS PART WITH AI-->
+<script>
+    function calculate(operation) {
+        const num1 = parseFloat(document.getElementById("num1").value);
+        const num2 = parseFloat(document.getElementById("num2").value);
+        let result;
+
+        if (isNaN(num1) || isNaN(num2)) {
+            alert("Please enter valid numbers.");
+            return;
+        }
+
+        if (operation === "add") {
+            result = num1 + num2;
+        } else if (operation === "subtract") {
+            result = num1 - num2;
+        } else if (operation === "multiply") {
+            result = num1 * num2;
+        } else if (operation === "divide") {
+            if (num2 === 0) {
+                alert("Cannot divide by zero.");
+                return;
+            }
+            result = num1 / num2;
+        }
+
+        document.getElementById("result").innerText = "Result: " + result;
+    }
+</script>
+</head>
+
+<body>
+    <h1>Simple Calculator</h1>
+
+    <input type="text" id="num1" placeholder="Number 1">
+    <br><br>
+
+    <button onclick="calculate('add')">ADD</button>
+    <button onclick="calculate('subtract')">SUBTRACT</button>
+    <button onclick="calculate('multiply')">MULTIPLY</button>
+    <button onclick="calculate('divide')">DIVIDE</button>
+
+    <br><br>
+
+    <input type="text" id="num2" placeholder="Number 2">
+    <br><br>
+
+    <p id="result"></p>
+</body>
